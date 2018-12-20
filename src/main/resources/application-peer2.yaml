@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: peer2
+  client:
+  # 向eureka注册
+    register-with-eureka: true
+  # 从注册中心fetch
+    fetch-registry: true
+    service-url:
+      defaultZone: http://peer1:7001/eureka/
+#      自我保护机制
+#  server:
+#    enable-self-preservation: false
